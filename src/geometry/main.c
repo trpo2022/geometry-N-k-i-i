@@ -2,16 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "libgeomerty/geometry.h"
+
 #define N 80
 #define R 5
-
-struct circle {
-  float x, y, r;
-} c;
-
-struct triangle {
-  float x1, x2, x3, y1, y2, y3;
-} tr;
 
 double chisla(char *str, int *i);  //функция проверки числа
 
