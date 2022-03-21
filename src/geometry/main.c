@@ -4,11 +4,7 @@
 #include <string.h>
 
 #include "libgeomerty/geometry.h"
-
-#define N 80
-#define R 5
-
-double chisla(char *str, int *i);  //функция проверки числа
+#include "libothers/libothers.h"
 
 int main() {
   int i;
@@ -19,12 +15,7 @@ int main() {
   FILE *file;
   file = fopen("figures.txt", "r");
 
-  // Проверка открытия файла
-  printf("Открытие файла:");
-  if (file == NULL)
-    printf("ошибка\n");
-  else
-    printf("выполнено\n");
+  opentest(&file);
 
   while (fgets(m3, N, file) != NULL) {
     if (strncmp(m1, m3, R) == 0) {
@@ -41,8 +32,8 @@ int main() {
       tr.y2 = chisla(m3, &i);
       tr.x3 = chisla(m3, &i);
       tr.y3 = chisla(m3, &i);
-      printf("Triangle (%0.0f %0.0f, %0.0f %0.0f, %0.0f %0.0f)\n", tr.x1, tr.y1,
-             tr.x2, tr.y2, tr.x3, tr.y3);
+      printf("Triangle (%0.0f %0.0f, %0.0f %0.0f, %0.0f %0.0f, %0.0f %0.0f)\n",
+             tr.x1, tr.y1, tr.x2, tr.y2, tr.x3, tr.y3, tr.x1, tr.y1);
     } else {
       printf("Error\n");
     }
@@ -50,9 +41,7 @@ int main() {
   return 0;
 }
 
-// FUNCTION
-
-double chisla(char *str, int *i)  //функция проверки числа
+double numbers(char *str, int *i)  //функция проверки числа
 {
   double result = 0;
   double div = 10;
