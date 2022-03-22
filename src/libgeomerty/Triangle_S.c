@@ -5,7 +5,7 @@
 
 #include "geometry.h"
 
-float ST(int x1, int y1, int x2, int y2, int x3, int y3) {
+float ST(float x1, float y1, float x2, float y2, float x3, float y3) {
   float St;
   St = ((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1)) / 2;
   return St;

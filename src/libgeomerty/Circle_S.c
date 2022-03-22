@@ -5,8 +5,8 @@
 
 #include "geometry.h"
 
-float SC(int r) {
+float SC(float r) {
   float Sc;
-  Sc = 3.14 * pow(r, 2);
+  Sc = M_PI * pow(r, 2);
   return Sc;
 }

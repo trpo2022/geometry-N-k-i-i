@@ -1,10 +1,10 @@
 #ifndef GEOMETRY_H
 #define GEOMETRY_H
 
-float SC(int r);
-float PC(int r);
-float ST(int x1, int y1, int x2, int y2, int x3, int y3);
-float TP(int x1, int y1, int x2, int y2, int x3, int y3);
+float SC(float r);
+float PC(float r);
+float ST(float x1, float y1, float x2, float y2, float x3, float y3);
+float TP(float x1, float y1, float x2, float y2, float x3, float y3);
 
 struct circle {
   float x, y, r;

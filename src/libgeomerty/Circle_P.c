@@ -5,8 +5,8 @@
 
 #include "geometry.h"
 
-float PC(int r) {
+float PC(float r) {
   float Pc;
-  Pc = 2 * 3.14 * r;
+  Pc = 2 * M_PI * r;
   return Pc;
 }
