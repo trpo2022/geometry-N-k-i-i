@@ -1,6 +1,8 @@
 #ifndef LIBOTHERS_h
 #define LIBOTHERS_h
 
+#include <stdio.h>
+
 #define N 80
 #define M 5
 
