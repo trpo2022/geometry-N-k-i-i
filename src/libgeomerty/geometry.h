@@ -1,6 +1,11 @@
 #ifndef GEOMETRY_H
 #define GEOMETRY_H
 
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 float SC(float r);
 float PC(float r);
 float ST(float x1, float y1, float x2, float y2, float x3, float y3);

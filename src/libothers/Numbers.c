@@ -1,8 +1,3 @@
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "libothers.h"
 
 double numbers(char *str, int *i)  //функция проверки числа
