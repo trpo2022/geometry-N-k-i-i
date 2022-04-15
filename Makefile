@@ -1,44 +1,55 @@
 G = gcc
-GF = -c -Wall
-VPATH = src/geometry src
+GF = -Wall -Werror -c 
+VPATH = src/geometry:src/liboters:src/libgeometry
+M = main
+CP = Circle_P
+CS = Circle_S
+TP = Triangle_P
+TS = Triangle_S
+NUM = Numbers
+OP = Opentest
+PC = PrintCircle
+PT = PrintTriangle
 
-OBJG = Circle_P.o Circle_S.o Triangle_P.o Triangle_S.o
-OBJO = Numbers.o Opentest.o PrintCircle.o PrintTriangle.o
-DIRG = src/libgeometry/geometry.h
-DIRO = src/libothers/libothers.h
+OBJG = $(CP).o $(CS).o $(TP).o $(TS).o
+OBJO = $(NUM).o $(OP).o $(PC).o $(PT).o
+
+
 
 all: geometry
 
-geometry: main.o $(OBJG) $(OBJO)
-	$(G) $^  -o
+geometry: $(M).o $(OBJG) $(OBJO)
+	$(G) -o geometry  $^ 
 
-main.o: main.c 
-	$(G) $(GF) $^
 
-Circle_P.o: Circle_P.c 
-	$(G) $(GF) $^ 
-
-Circle_S.o:	Circle_S.c 
-	$(G) $(GF) $^ 
-
-Triangle_P.o: Triangle_P.c 
-	$(G) $(GF) $^ 
-
-Triangle_S.o: Triangle_S.c 
+$(M).o: $(M).c
 	$(G) $(GF) $^ 
 
 
-
-Numbers.o: Numbers.c
+$(CP).o: $(CP).c 
 	$(G) $(GF) $^ 
 
-Opentest.o: Opentest.c
+$(CS).o: $(CS).c 
 	$(G) $(GF) $^ 
 
-PrintCircle.o: PrintCircle.c
+$(TP).o: $(TP).c 
 	$(G) $(GF) $^ 
 
-PrintTriangle.o: PrintTriangle.c 
+$(TS).o: $(TS).c 
+	$(G) $(GF) $^ 
+
+
+
+$(NUM).o: $(NUM).c
+	$(G) $(GF) $^ 
+
+$(OP).o: $(OP).c
+	$(G) $(GF) $^ 
+
+$(PC).o: $(PC).c
+	$(G) $(GF) $^ 
+
+$(PT).o: $(PT).c 
 	$(G) $(GF) $^ 
 
 

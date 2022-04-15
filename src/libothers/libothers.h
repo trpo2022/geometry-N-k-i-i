@@ -7,7 +7,7 @@
 #define M 5
 
 double numbers(char *str, int *i);  //функция проверки числа
-void opentest(const FILE *file);  // функция проверки открытия файла
+void opentest(FILE *file);  // функция проверки открытия файла
 //функция вывода данных треугольника
 void printT(float x1, float y1, float x2, float y2, float x3, float y3);
 //функция вывода данных окружности
