@@ -1,18 +1,28 @@
 G = gcc
-GF = -Wall -Werror -c 
-VPATH = src/geometry:src/liboters:src/libgeometry
-M = main
-CP = Circle_P
-CS = Circle_S
-TP = Triangle_P
-TS = Triangle_S
-NUM = Numbers
-OP = Opentest
-PC = PrintCircle
-PT = PrintTriangle
+GF = -Wall -Werror -c
 
-OBJG = $(CP).o $(CS).o $(TP).o $(TS).o
-OBJO = $(NUM).o $(OP).o $(PC).o $(PT).o
+OBJMAIN = ../src/geometry/
+OBJLIBG = ../src/libgeometry/
+OBJLIBO = ../src/libothers/
+
+OBJG = Circle_P$(O) Circle_S$(O) Triangle_P$(O) Triangle_S$(O)
+OBJO = Numbers$(O) Opentest$(O) PrintCircle$(O) PrintTriangle$(O)
+
+C = .c
+O = .o
+
+M = $(OBJMAIN)main
+
+CP = $(OBJLIBG)Circle_P
+CS = $(OBJLIBG)Circle_S
+TP = $(OBJLIBG)Triangle_P
+TS = $(OBJLIBG)Triangle_S
+
+NUM = $(OBJLIBO)Numbers
+OP = $(OBJLIBO)Opentest
+PC = $(OBJLIBO)PrintCircle
+PT = $(OBJLIBO)PrintTriangle
+
 
 
 
@@ -22,34 +32,34 @@ geometry: $(M).o $(OBJG) $(OBJO)
 	$(G) -o geometry  $^ 
 
 
-$(M).o: $(M).c
+main$(O): $(M)$(C)
 	$(G) $(GF) $^ 
 
 
-$(CP).o: $(CP).c 
+Circle_P$(O): $(CP)$(C)
 	$(G) $(GF) $^ 
 
-$(CS).o: $(CS).c 
+Circle_S$(O): $(CS)$(C)
 	$(G) $(GF) $^ 
 
-$(TP).o: $(TP).c 
+Triangle_P$(O): $(TP)$(C)
 	$(G) $(GF) $^ 
 
-$(TS).o: $(TS).c 
+Triangle_S$(O): $(TS)$(C)
 	$(G) $(GF) $^ 
 
 
 
-$(NUM).o: $(NUM).c
+Numbers$(O): $(NUM)$(C)
 	$(G) $(GF) $^ 
 
-$(OP).o: $(OP).c
+Opentest$(O): $(OP)$(C)
 	$(G) $(GF) $^ 
 
-$(PC).o: $(PC).c
+PrintCircle$(O): $(PC)$(C)
 	$(G) $(GF) $^ 
 
-$(PT).o: $(PT).c 
+PrintTriangle$(O): $(PT)$(C)
 	$(G) $(GF) $^ 
 
 
