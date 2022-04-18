@@ -1,7 +1,11 @@
 #ifndef LIBOTHERS_h
 #define LIBOTHERS_h
 
+#include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 #define N 80
 #define M 5

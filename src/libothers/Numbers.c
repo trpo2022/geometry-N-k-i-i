@@ -7,7 +7,7 @@
 
 double numbers(char *str, int *i)  //функция проверки числа
 {
-  double result = 0;
+  float result = 0;
   double div = 10;
   int sign = 1;
 

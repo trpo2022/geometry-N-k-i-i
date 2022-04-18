@@ -1,9 +1,9 @@
 G = gcc
 GF = -Wall -Werror -c
-
-OBJMAIN = ../src/geometry/
-OBJLIBG = ../src/libgeometry/
-OBJLIBO = ../src/libothers/
+#VPATH := src/geometry src/libgeometry src/libothers
+OBJMAIN = src/geometry/
+OBJLIBG = src/libgeomerty/
+OBJLIBO = src/libothers/
 
 OBJG = Circle_P$(O) Circle_S$(O) Triangle_P$(O) Triangle_S$(O)
 OBJO = Numbers$(O) Opentest$(O) PrintCircle$(O) PrintTriangle$(O)
@@ -29,7 +29,7 @@ PT = $(OBJLIBO)PrintTriangle
 all: geometry
 
 geometry: $(M).o $(OBJG) $(OBJO)
-	$(G) -o geometry  $^ 
+	$(G) -o geometry  $^ -lm
 
 
 main$(O): $(M)$(C)
