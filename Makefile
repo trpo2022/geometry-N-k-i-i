@@ -29,7 +29,7 @@ WAYOBJO = obj/scr/libothers/
 all: geometry
 
 geometry: $(WAYOBJM)main.o $(OBJG) $(OBJO)
-	$(G) -o geometry  $^ -lm
+	$(G) -o bin/geometry  $^ -lm
 
 
 $(WAYOBJM)main$(O): $(M)$(C)
