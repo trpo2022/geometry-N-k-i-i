@@ -5,61 +5,63 @@ OBJMAIN = src/geometry/
 OBJLIBG = src/libgeomerty/
 OBJLIBO = src/libothers/
 
-OBJG = Circle_P$(O) Circle_S$(O) Triangle_P$(O) Triangle_S$(O)
-OBJO = Numbers$(O) Opentest$(O) PrintCircle$(O) PrintTriangle$(O)
+OBJG = $(WAYOBJG)Circle_P$(O) $(WAYOBJG)Circle_S$(O) $(WAYOBJG)Triangle_P$(O) $(WAYOBJG)Triangle_S$(O)
+OBJO = $(WAYOBJO)Numbers$(O) $(WAYOBJO)Opentest$(O) $(WAYOBJO)PrintCircle$(O) $(WAYOBJO)PrintTriangle$(O)
 
 C = .c
 O = .o
 
 M = $(OBJMAIN)main
-
 CP = $(OBJLIBG)Circle_P
 CS = $(OBJLIBG)Circle_S
 TP = $(OBJLIBG)Triangle_P
 TS = $(OBJLIBG)Triangle_S
-
 NUM = $(OBJLIBO)Numbers
 OP = $(OBJLIBO)Opentest
 PC = $(OBJLIBO)PrintCircle
 PT = $(OBJLIBO)PrintTriangle
 
 WAYOBJM = obj/scr/geometry/
-WAYOBJGL = obj/scr/libothers/
-WAYOBJOL = obj/scr/libothers/
+WAYOBJG = obj/scr/libgeometry/
+WAYOBJO = obj/scr/libothers/
 
 
 all: geometry
 
-geometry: $(M).o $(OBJG) $(OBJO)
+geometry: $(WAYOBJM)main.o $(OBJG) $(OBJO)
 	$(G) -o geometry  $^ -lm
 
 
 $(WAYOBJM)main$(O): $(M)$(C)
-	$(G) $(GF) $^ 
+	$(G) $(GF) -o $@ $^ 
 
 
-$(WAYOBJGL)Circle_P$(O): $(CP)$(C)
-	$(G) $(GF) $^ 
+$(WAYOBJG)Circle_P$(O): $(CP)$(C)
+	$(G) $(GF) -o $@  $^ 
 
-$(WAYOBJGL)Circle_S$(O): $(CS)$(C)
-	$(G) $(GF) $^ 
+$(WAYOBJG)Circle_S$(O): $(CS)$(C)
+	$(G) $(GF) -o $@ $^ 
 
-$(WAYOBJGL)Triangle_P$(O): $(TP)$(C)
-	$(G) $(GF) $^ 
+$(WAYOBJG)Triangle_P$(O): $(TP)$(C)
+	$(G) $(GF) -o $@ $^ 
 
-$(WAYOBJGL)Triangle_S$(O): $(TS)$(C)
-	$(G) $(GF) $^ 
+$(WAYOBJG)Triangle_S$(O): $(TS)$(C)
+	$(G) $(GF) -o $@ $^ 
 
 
 
-$(WAYOBJOL)Numbers$(O): $(NUM)$(C)
-	$(G) $(GF) $^ 
+$(WAYOBJO)Numbers$(O): $(NUM)$(C)
+	$(G) $(GF) -o $@ $^ 
 
-$(WAYOBJOL)Opentest$(O): $(OP)$(C)
-	$(G) $(GF) $^ 
+$(WAYOBJO)Opentest$(O): $(OP)$(C)
+	$(G) $(GF) -o $@ $^ 
 
-$(WAYOBJOL)PrintCircle$(O): $(PC)$(C)
-	$(G) $(GF) $^ 
+$(WAYOBJO)PrintCircle$(O): $(PC)$(C)
+	$(G) $(GF) -o $@ $^ 
 
-$(WAYOBJOL)PrintTriangle$(O): $(PT)$(C)
-	$(G) $(GF) $^ 
+$(WAYOBJO)PrintTriangle$(O): $(PT)$(C)
+	$(G) $(GF) -o $@ $^ 
+
+clean:
+	rm *.o
+
