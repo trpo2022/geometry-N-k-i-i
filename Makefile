@@ -23,7 +23,9 @@ OP = $(OBJLIBO)Opentest
 PC = $(OBJLIBO)PrintCircle
 PT = $(OBJLIBO)PrintTriangle
 
-
+WAYOBJM = obj/scr/geometry/
+WAYOBJGL = obj/scr/libothers/
+WAYOBJOL = obj/scr/libothers/
 
 
 all: geometry
@@ -32,36 +34,32 @@ geometry: $(M).o $(OBJG) $(OBJO)
 	$(G) -o geometry  $^ -lm
 
 
-main$(O): $(M)$(C)
+$(WAYOBJM)main$(O): $(M)$(C)
 	$(G) $(GF) $^ 
 
 
-Circle_P$(O): $(CP)$(C)
+$(WAYOBJGL)Circle_P$(O): $(CP)$(C)
 	$(G) $(GF) $^ 
 
-Circle_S$(O): $(CS)$(C)
+$(WAYOBJGL)Circle_S$(O): $(CS)$(C)
 	$(G) $(GF) $^ 
 
-Triangle_P$(O): $(TP)$(C)
+$(WAYOBJGL)Triangle_P$(O): $(TP)$(C)
 	$(G) $(GF) $^ 
 
-Triangle_S$(O): $(TS)$(C)
-	$(G) $(GF) $^ 
-
-
-
-Numbers$(O): $(NUM)$(C)
-	$(G) $(GF) $^ 
-
-Opentest$(O): $(OP)$(C)
-	$(G) $(GF) $^ 
-
-PrintCircle$(O): $(PC)$(C)
-	$(G) $(GF) $^ 
-
-PrintTriangle$(O): $(PT)$(C)
+$(WAYOBJGL)Triangle_S$(O): $(TS)$(C)
 	$(G) $(GF) $^ 
 
 
-clean:
-	rm *.o
+
+$(WAYOBJOL)Numbers$(O): $(NUM)$(C)
+	$(G) $(GF) $^ 
+
+$(WAYOBJOL)Opentest$(O): $(OP)$(C)
+	$(G) $(GF) $^ 
+
+$(WAYOBJOL)PrintCircle$(O): $(PC)$(C)
+	$(G) $(GF) $^ 
+
+$(WAYOBJOL)PrintTriangle$(O): $(PT)$(C)
+	$(G) $(GF) $^ 
