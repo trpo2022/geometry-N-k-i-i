@@ -1,5 +1,5 @@
 G = gcc
-GF = -Wall -Werror -c
+GF = -Wall -Werror -c -o
 #VPATH := src/geometry src/libgeometry src/libothers
 OBJMAIN = src/geometry/
 OBJLIBG = src/libgeometry/
@@ -20,6 +20,7 @@ NUM = $(OBJLIBO)Numbers
 OP = $(OBJLIBO)Opentest
 PC = $(OBJLIBO)PrintCircle
 PT = $(OBJLIBO)PrintTriangle
+TESTOBJ = obj/test/main/main.o obj/test/libtest/test.o
 
 WAYOBJM = obj/scr/geometry/
 WAYOBJG = obj/scr/libgeometry/
@@ -33,34 +34,50 @@ geometry: $(WAYOBJM)main.o $(OBJG) $(OBJO)
 
 
 $(WAYOBJM)main$(O): $(M)$(C)
-	$(G) $(GF) -o $@ $^ 
+	$(G) $(GF) $@ $^ 
 
+
+#Компиляция функций библиотеки libgeometry
 
 $(WAYOBJG)Circle_P$(O): $(CP)$(C)
-	$(G) $(GF) -o $@  $^ 
+	$(G) $(GF) $@  $^ 
 
 $(WAYOBJG)Circle_S$(O): $(CS)$(C)
-	$(G) $(GF) -o $@ $^ 
+	$(G) $(GF) $@ $^ 
 
 $(WAYOBJG)Triangle_P$(O): $(TP)$(C)
-	$(G) $(GF) -o $@ $^ 
+	$(G) $(GF) $@ $^ 
 
 $(WAYOBJG)Triangle_S$(O): $(TS)$(C)
-	$(G) $(GF) -o $@ $^ 
+	$(G) $(GF) $@ $^ 
 
 
+#Компиляция функций библиотеки libothers
 
 $(WAYOBJO)Numbers$(O): $(NUM)$(C)
-	$(G) $(GF) -o $@ $^ 
+	$(G) $(GF) $@ $^ 
 
 $(WAYOBJO)Opentest$(O): $(OP)$(C)
-	$(G) $(GF) -o $@ $^ 
+	$(G) $(GF) $@ $^ 
 
 $(WAYOBJO)PrintCircle$(O): $(PC)$(C)
-	$(G) $(GF) -o $@ $^ 
+	$(G) $(GF) $@ $^ 
 
 $(WAYOBJO)PrintTriangle$(O): $(PT)$(C)
-	$(G) $(GF) -o $@ $^ 
+	$(G) $(GF) $@ $^ 
+
+
+## Компиляция тестов
+
+test: $(TESTOBJ) $(OBJG)
+	$(G) -o filefortest $^ -lm
+
+obj/test/main/main.o: test/main/main.c
+	$(G) $(GF) $@ $^ 
+
+obj/test/libtest/test.o: test/libtest/test.c
+	$(G) $(GF) $@ $^ 
+
 
 clean:
 	rm *.o

@@ -1,11 +1,5 @@
-#include <assert.h>
-#include <stdio.h>
+#include "../libtest/testing.h"
 
-#include "../libgeometry/geometry.h"
-#include "../libothers/libothers.h"
-
-#define TEST_C 9
-#define TEST_T 5
 void TestPerimetrCircle(void) {
   float CircleR[10] = {1, 2, 3.5, 4.36, 5.00, 6.1, 76, 8, 9.9, 956};
   float CircleP[10] = {6.28,  12.56,  21.99, 27.39, 31.41,
@@ -31,21 +25,21 @@ void TestPerimetrTriangle(void) {
                           {5, 1, 2, 5, 3, 5},
                           {2, 2, 5, 5, 1, 1}};
   float TriangleP[] = {};
-  for (int i = 0; i <= N; i++) {
+  for (int i = 0; i <= TEST_T; i++) {
     assert(TriangleP[i] == TP(Triangle[i][1], Triangle[i][2], Triangle[i][3],
                               Triangle[i][4], Triangle[i][5], Triangle[i][6]));
   }
 }
 
-void TestSquareTriangle() {
+void TestSquareTriangle(void) {
   float Triangle[6][6] = {{1, 2, 2, 3, 4, 6},
                           {2, 5, 7, 4, 3, 2},
                           {3, 2, 4, 3, 2, 5},
                           {5, 1, 2, 5, 3, 5},
                           {2, 2, 5, 5, 1, 1}};
   float TriangleS[] = {};
-  for (int i = 0; i <= N; i++) {
-    assert((TriangleS[i]) == TP(Triangle[i][0], Triangle[i][1], Triangle[i][2],
+  for (int i = 0; i <= TEST_T; i++) {
+    assert((TriangleS[i]) == TS(Triangle[i][0], Triangle[i][1], Triangle[i][2],
                                 Triangle[i][3], Triangle[i][4],
                                 Triangle[i][5]));
   }
