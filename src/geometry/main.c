@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../libgeomerty/geometry.h"
+#include "../libgeometry/geometry.h"
 #include "../libothers/libothers.h"
 
 int main() {

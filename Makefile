@@ -2,7 +2,7 @@ G = gcc
 GF = -Wall -Werror -c
 #VPATH := src/geometry src/libgeometry src/libothers
 OBJMAIN = src/geometry/
-OBJLIBG = src/libgeomerty/
+OBJLIBG = src/libgeometry/
 OBJLIBO = src/libothers/
 
 OBJG = $(WAYOBJG)Circle_P$(O) $(WAYOBJG)Circle_S$(O) $(WAYOBJG)Triangle_P$(O) $(WAYOBJG)Triangle_S$(O)

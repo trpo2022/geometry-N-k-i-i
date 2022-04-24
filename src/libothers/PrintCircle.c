@@ -1,4 +1,3 @@
-#include "../libgeomerty/geometry.h"
 #include "libothers.h"
 
 void printC(float x, float y, float r) {
@@ -7,5 +6,5 @@ void printC(float x, float y, float r) {
       "  R = %0.2f\n"
       "  Perimeter = %0.2f\n"
       "  Area = %0.2f\n",
-      c.x, c.y, c.r, PC(r), SC(r));
+      c.x, c.y, c.r, CP(r), CS(r));
 }

@@ -6,8 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-float SC(float r);
-float PC(float r);
+float CS(float r);
+float CP(float r);
 float TS(float x1, float y1, float x2, float y2, float x3, float y3);
 float TP(float x1, float y1, float x2, float y2, float x3, float y3);
 

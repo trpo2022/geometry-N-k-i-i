@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "../libgeometry/geometry.h"
+
 #define N 80
 #define M 5
 
