@@ -7,7 +7,7 @@
 #include "../../src/libgeometry/geometry.h"
 
 #define TEST_C 9
-#define TEST_T 5
+#define TEST_T 4
 void TestPerimetrCircle(void);
 void TestSquareCircle(void);
 void TestPerimetrTriangle(void);

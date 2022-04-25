@@ -5,6 +5,6 @@ void printT(float x1, float y1, float x2, float y2, float x3, float y3) {
       "Triangle (%0.0f %0.0f, %0.0f %0.0f, %0.0f %0.0f, %0.0f %0.0f)\n"
       "  Perimeter =  %0.2f\n"
       "  Area = %0.2f\n",
-      x1, y1, x2, y2, x3, y3, x1, y1, TP(x1, y1, x2, y2, x3, y3),
-      TS(x1, y1, x2, y2, x3, y3));
+      x1, y1, x2, y2, x3, y3, x1, y1, fabs(TP(x1, y1, x2, y2, x3, y3)),
+      fabs(TS(x1, y1, x2, y2, x3, y3)));
 }

@@ -13,7 +13,7 @@ int main() {
   char m3[N];
 
   FILE *file;
-  file = fopen("figures.txt", "r");
+  file = fopen("../datafile/figures.txt", "r");
 
   opentest(file);
 
